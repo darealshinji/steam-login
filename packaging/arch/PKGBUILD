@@ -1,0 +1,34 @@
+# Based on: https://aur.archlinux.org/packages/steam-session-git/
+
+pkgname=steam-session-openbox-git
+pkgver=1
+pkgrel=1
+pkgdesc="Launch Steam Big Picture from your login screen"
+arch=('any')
+url="https://github.com/darealshinji/steam-session-openbox/"
+license=('GPL2')
+depends=('openbox' 'wmctrl' 'steam' 'zenity')
+makedepends=('git')
+provides=("${pkgname%-*}")
+conflicts=("${pkgname%-*}" "steam-session" "steam-session-git" "steam-session-kdm" "steam-session-kdm-git")
+source=("${pkgname%-*}::git+https://github.com/darealshinji/steam-session-openbox.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "${srcdir}"/${pkgname%-*}
+
+  git rev-list --count HEAD
+}
+
+package() {
+  cd "${srcdir}"/${pkgname%-*}
+
+  make -C steam-session install DESTDIR="${pkgdir}"
+
+# Fix permissions
+  find "${pkgdir}" -type d -exec chmod 755 {} +
+  find "${pkgdir}" -type f -exec chmod 644 {} +
+  chmod 755 "${pkgdir}"/usr/bin/steam-de
+}
+
+# vim: ts=2 sw=2 et:

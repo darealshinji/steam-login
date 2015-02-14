@@ -1,0 +1,23 @@
+* *Version 8*
+Improve primusrun. better performance with "optirun -b primus" than "primusrun" (thanks to xXxDeadStarxXx <axy.david@gmail.com>). PPA for Ubuntu Saucy.
+
+* *Version 7*
+Code cleanup, fix bug while bigpicture was not working with newer steam versions, make it less intensive and changed Steam name to not be all caps anymore (thanks to Zeroedout <alishams.hassam@gmail.com>)
+
+* *Version 6.1*
+Change recommends to suggests for xserver-xorg-input-joystick as users may have trouble in some systems and other desktops
+
+* *Version 6*
+Shows error message when steam fails to run, add possibility to login with the gamepad in lightdm (Thanks to  pmk1c <ruben.uwe.grimm@gmail.com>), code cleanup, removed some useless workaround, thanks to steam fixes, replaced steam-de default folder
+
+* *Version 5*
+Added STEAM badge icon for lightdm, fixed bad quality package and improved package information, script modified to monitor windows, so steam always recover focus after gameplay and there is no need anymore to click in ok to close steam on non-hacked version
+
+* *Version 4*
+Improved compatibility with more games, support for nvidia optimus (if bumblebee and/or Primus is present), restart steam if it crashes, hack to close steam when not using the "hacked version", workaround for TF2 black screen bug and for text fonts bug with some specific fonts settings. 
+
+* *Version 3*
+Improved multimonitor setup, loading gnome (unity) settings, chagend openbox to xfwm4: improving compatibility, removing unecessary new options added to login screen and fixing the need to "alt+tab" after playing a game in hacked version
+
+* *Version 2*
+Now use openbox Window Manager to improve game compatibility corectly setting focus on the active window. The openbox is now set as dependecy on the platform

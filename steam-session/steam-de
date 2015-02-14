@@ -1,6 +1,6 @@
 #!/bin/bash
 #STEAM DE - Script for starting Steam at login
-#Copyright (C) 2012  Thomaz de Oliveira dos Reis <thor27@gmail.com>
+#Copyright (C) 2012-2015  Thomaz de Oliveira dos Reis <thor27@gmail.com>
 #
 #This program is free software; you can redistribute it and/or
 #modify it under the terms of the GNU General Public License
@@ -45,11 +45,6 @@ function disable_joysticks() {
 
 stop 
 
-# Start basic window manager and video settings
-xfwm4 --replace --daemon --compositor=off
-which nvidia-settings && nvidia-settings -l 
-which gnome-settings-daemon && gnome-settings-daemon &
-
 # Disable xinput for joysticks
 if [ -x /usr/bin/xinput ]; then
     disable_joysticks
@@ -79,6 +74,11 @@ xset s off
 #Execute STEAM
 $prefix $program $parameters &
 PID=$!
+
+# Start basic window manager and video settings
+which nvidia-settings && nvidia-settings -l 
+which gnome-settings-daemon && gnome-settings-daemon &
+exec openbox
 
 while ! check_steam_window
 do
