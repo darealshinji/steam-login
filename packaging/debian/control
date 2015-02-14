@@ -2,18 +2,29 @@ Source: steam-session-openbox
 Section: x11
 Priority: optional
 Maintainer: Marshall Banana <djcj@gmx.de>
-#Maintainer: Thomaz Reis <thor27@gmail.com>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
 Homepage: https://github.com/darealshinji/steam-session-openbox
-#Homepage: https://github.com/thor27/steam-login/
 Vcs-Git: https://github.com/darealshinji/steam-session-openbox.git
 Vcs-Browser: https://github.com/darealshinji/steam-session-openbox
 
 Package: steam-session
 Architecture: all
-Depends: ${misc:Depends}, openbox, wmctrl, steam | steam-launcher, zenity
-Suggests: xserver-xorg-input-joystick
+Depends:
+ ${misc:Depends},
+ openbox,
+ steam | steam-launcher,
+ wmctrl,
+ x11-xserver-utils,
+ xinput,
+ xset,
+ zenity
+Recommends: gnome-settings-daemon
+Suggests:
+ bumblebee,
+ nvidia-settings,
+ primus,
+ xserver-xorg-input-joystick
 Provides: steam-login
 Replaces: steam-login
 Description: launch Steam Big Picture from your login screen
@@ -21,4 +32,3 @@ Description: launch Steam Big Picture from your login screen
  package will put Steam as a login option, so you will be able to open only
  Steam and needed software to make it run correctly.
  It's almost a Steam Desktop.
-
