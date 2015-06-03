@@ -78,6 +78,7 @@ PID=$!
 # Start basic window manager and video settings
 which nvidia-settings && nvidia-settings -l 
 which gnome-settings-daemon && gnome-settings-daemon &
+source /etc/default/steam-de
 exec openbox
 
 while ! check_steam_window

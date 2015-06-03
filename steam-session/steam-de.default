@@ -1,0 +1,13 @@
+#
+# This script is sourced from the steam-de wrapper (by default in
+# /usr/bin/steam-de). Add here any calls and settings you need done before the
+# openbox session is spawned.
+#
+# For example, if you have multiple monitors and want to play using just one,
+# and the proper one, you can set that up using xrandr:
+#xrandr --output VGA-0 --off --output DVI-I-1 --auto
+
+# You can also configure xinput, for example, and adjust your mouse to disable
+# acceleration, if you want so.
+#xinput set-prop 8 'Device Accel Profile' -1
+#xinput set-prop 8 'Device Accel Velocity Scaling' 1
